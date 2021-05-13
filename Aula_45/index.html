@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 900px;
+            margin: auto;
+        }
+        h1{
+            font-family: sans-serif;
+            text-align: center;
+        }
+        #carro{
+            width: 450px;
+            height: 300px;
+        }
+        .c1{
+            background-image:url("img/carro1.jpg");
+        }
+        .c3{
+            background-image:url("img/carro2.jpg");
+        }
+        .c2{
+            background-image:url("img/carro3.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Manipulando atributos (setAttribute, removeAttribute, hasAttibute)</h1>
+    <button onmouseover="trocaCarro(1)">Carro 1</button>
+    <button onmouseover="trocaCarro(2)">Carro 2</button>
+    <button onmouseover="trocaCarro(3)">Carro 3</button>
+    <button onclick="removerCarro()">Clique para limpar</button>
+    <button onclick="varifica()">Clique e veja se o attributeClass está na tag (veja no console)</button>
+    <div id="carro">
+        
+    </div>
+
+    <script>
+        function trocaCarro(c){
+            var obj = document.getElementById("carro");
+            if(c==1){
+                obj.setAttribute("class","c1")
+            }
+            else if(c==2){
+                obj.setAttribute("class","c2")
+            }
+            else if(c==3){
+                obj.setAttribute("class","c3")
+            }
+        }
+        function removerCarro(){
+            var obj = document.getElementById("carro");
+            obj.removeAttribute("class")
+        }
+        function varifica(){
+            var obj=document.getElementById('carro');
+            if(obj.hasAttribute("class")){
+                console.log("Attribute class está na tag")
+            }else{
+                console.log("Sem Attribute class")
+            }
+
+
+        }
+        
+    </script>
+</body>
+</html>
